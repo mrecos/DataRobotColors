@@ -94,14 +94,6 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
 
 <img src="man/figures/README-plot-6.png" width="100%" />
 
-``` r
-ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
-  geom_point(size = 4) +
-  scale_color_DataRobot(palette = "DR_Qualitative") 
-```
-
-<img src="man/figures/README-plot-7.png" width="100%" />
-
 ## R Base plot Examples
 
 ``` r

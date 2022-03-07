@@ -76,9 +76,6 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
   geom_point(size = 4) +
   scale_color_DataRobot(palette = "DR_Qualitative")
 
-ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
-  geom_point(size = 4) +
-  scale_color_DataRobot(palette = "DR_Qualitative") 
 ```
 
 ## R Base plot Examples
