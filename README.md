@@ -33,6 +33,12 @@ You can install the development version of DataRobotColors from
 devtools::install_github("mrecos/DataRobotColors")
 ```
 
+## DataRobot Palettes
+
+![Blues, Reds, and Grays palette](./img/Reds_Blues_Grays.png)
+
+![Diverging and Qualitateive palette](./img/Diverging_Qualitative.png)
+
 ## {ggplot2} Examples
 
 ``` r
