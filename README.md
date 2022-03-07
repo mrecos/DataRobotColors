@@ -6,7 +6,14 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of DataRobotColors is to …
+The goal of DataRobotColors is to allow users to bring the DataRobot
+color schemes in to R plots and specifically {ggplo2}. The main
+functions of this package are `scale_color_DataRobot()` and
+`scale_fill_DataRobot()`. Additionally, the `DataRobot_pal()` function
+returns a `pal` function that can be used in other R plotting functions.
+Helper functions include `DataRobot_palette_names()` to name the
+palettes available, and `DataRobot_get_palettes()` to return the hex
+values of the underlying palette.
 
 ## Installation
 
@@ -24,22 +31,20 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(DataRobotColors)
-## basic example code
+library(ggplot2)
+theme_set(theme_minimal())
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`?
 You can include R chunks like so:
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 4) +
+  scale_color_DataRobot()
 ```
+
+<img src="man/figures/README-plot-1.png" width="100%" />
 
 You’ll still need to render `README.Rmd` regularly, to keep `README.md`
 up-to-date. `devtools::build_readme()` is handy for this. You could also

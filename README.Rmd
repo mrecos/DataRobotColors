@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of DataRobotColors is to ...
+The goal of DataRobotColors is to allow users to bring the DataRobot color schemes in to R plots and specifically {ggplo2}. The main functions of this package are `scale_color_DataRobot()` and `scale_fill_DataRobot()`. Additionally, the `DataRobot_pal()` function returns a `pal` function that can be used in other R plotting functions. Helper functions include `DataRobot_palette_names()` to name the palettes available, and `DataRobot_get_palettes()` to return the hex values of the underlying palette.
 
 ## Installation
 
@@ -35,13 +35,16 @@ This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 library(DataRobotColors)
-## basic example code
+library(ggplot2)
+theme_set(theme_minimal())
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
-```{r cars}
-summary(cars)
+```{r plot}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 4) +
+  scale_color_DataRobot()
 ```
 
 You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.

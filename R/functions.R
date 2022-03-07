@@ -73,6 +73,12 @@ DataRobot_pal <- function(palette = "DR_Blues", reverse = FALSE, ...) {
   colorRampPalette(pal, ...)
 }
 
+#' Return the names of DataRobot color palettes
+#'
+DataRobot_palette_names <- function(){
+  return(names(DataRobot_get_palettes()))
+}
+
 #' Return function to return a list of DataRobot color palettes
 #'
 DataRobot_get_palettes <- function(palette = palette){
@@ -166,7 +172,7 @@ scale_color_DataRobot <- function(palette = "DR_Blues", discrete = TRUE, reverse
 #' @param ... Additional arguments passed to discrete_scale() or
 #'            scale_fill_gradientn(), used respectively when discrete is TRUE or FALSE
 #'
-scale_fill_DataRobot<- function(palette = "DR_Blues", discrete = TRUE, reverse = FALSE, ...) {
+scale_fill_DataRobot <- function(palette = "DR_Blues", discrete = TRUE, reverse = FALSE, ...) {
   pal <- DataRobot_pal(palette = palette, reverse = reverse)
 
   if (discrete) {
