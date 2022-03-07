@@ -47,12 +47,24 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
   scale_color_DataRobot()
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
 
-You can also embed plots, for example:
 
-```{r pressure, echo = FALSE}
-plot(pressure)
+```{r plots2}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 4) +
+  scale_color_DataRobot(palette = "DR_Reds")
+
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 4) +
+  scale_color_DataRobot(palette = "DR_Qualitative")
+
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4, alpha = .6) +
+  scale_color_DataRobot(discrete = FALSE, palette = "DR_Grays")
+
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_DataRobot(palette = "DR_Diverging", guide = "none")
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
