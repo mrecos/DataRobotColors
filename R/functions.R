@@ -1,7 +1,3 @@
-# .onLoad = function (libname, pkgname) {
-#   #assign('myvar', value, envir = topenv())
-#   source("./R/palettes.R")
-# }
 
 #' Function to extract DataRobot colors as hex codes
 #'
